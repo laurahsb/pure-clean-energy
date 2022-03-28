@@ -1,0 +1,74 @@
+{{ define "main" }}
+  <main>
+    <section>
+      {{ partial "introduction.html" . }}
+    </section>
+    <section id="travel" class="introduction">
+      <h2 id="select">{{ .Site.Params.Products_title }}</h2>
+      {{ partial "category-selector" . }}
+    </section>
+    <div 
+    class="introduction introduction-no-py parallax-window" 
+    data-speed="0.4" 
+    data-parallax="scroll" 
+    data-image-src='{{ `images/background.jpg` | absURL }}'>
+      <div class="products flex-grid">
+        {{ range .Pages.ByDate }}
+          {{ partial "product.html" .Params }}
+        {{ end }}
+      </div>
+    </div>
+    {{ partial "snipcart.html" . }}
+
+    <div class="embeds">
+      <div class="embed">
+        <iframe 
+          width="300" 
+          height="250" 
+          frameborder="0" 
+          scrolling="no" 
+          marginheight="0" 
+          marginwidth="0" 
+          src="https://www.openstreetmap.org/export/embed.html?bbox=8.029879331588747%2C53.19208281926815%2C8.038837909698488%2C53.194997824075216&amp;layer=mapnik&amp;marker=53.19354034644627%2C8.034358620643616"
+          style="border: 1px solid black
+          "></iframe>
+        </div>
+      <div class="embed">
+    <div 
+      id="wcom-2b700499ab97eaad79a6047da6503e95" 
+      class="wcom-default w300x250" 
+      style="border: 1px solid #CCC; background-color: #FCFCFC; border-radius: 5px">
+        <link 
+          rel="stylesheet" 
+          href="//cs3.wettercomassets.com/woys/5/css/w.css" 
+          media="all">
+            <div class="wcom-city">
+              <a 
+                style="color: #000" 
+                href="https://www.wetter.com/deutschland/bad-zwischenahn/DE0000720.html" 
+                target="_blank" 
+                rel="nofollow" 
+                aria-label="Wetter Berlin" 
+                title="Wetter Bad Zwischenahn"
+                >Wetter Bad Zwischenahn
+              </a>
+            </div>
+            <div id="wcom-2b700499ab97eaad79a6047da6503e95-weather"></div>
+            <script type="text/javascript" src="//cs3.wettercomassets.com/woys/5/js/w.js"></script>
+            <script type="text/javascript">_wcomWidget({id: 'wcom-2b700499ab97eaad79a6047da6503e95',location: 'DE0000720',format: '300x250',type: 'summary'});</script>
+          </div>
+      </div>
+    </div>
+
+    <section id="ratings">
+      <h2>{{ .Site.Params.Reviews_title }}</h2>
+      <div class="container">
+        <div class="reviews flex-grid">
+          {{ range .Site.Data.reviews }}
+            {{partial "review.html" . }}
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  </main>
+{{ end }}

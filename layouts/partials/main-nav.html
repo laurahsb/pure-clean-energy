@@ -1,0 +1,30 @@
+<div class="main-nav">
+    <ul data-open="false">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Über uns</a></li>
+        <li><a href="#travel">Deine Reise</a></li>
+        <li><a href="#book">Buchen</a></li>
+        <li><a href="#ratings">Rezensionen</a></li>
+    </ul>
+    <a class="hide-md" id="open-main-nav">Navigation</a>
+    <script>
+        document.getElementById('open-main-nav').addEventListener("click", function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMainNav();
+            return false;
+        });
+    
+        function toggleMainNav(){
+            var list = document.querySelector('.main-nav ul');
+            var isOpen = list.getAttribute('data-open');
+            list.setAttribute('data-open', isOpen === "true" ? "false" : "true");
+
+            document.addEventListener("click", function() {
+                list.setAttribute('data-open', "false");
+            })
+
+            return false;
+          }
+      </script>
+</div>

@@ -1,0 +1,15 @@
+$quote-color: #664b34;
+
+.quote {
+    margin: 0 auto;
+    max-width: 1500px;
+    padding: 1em;
+    .quote-text{
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        font-size: 40pt;
+    }
+    .quote-author {
+        text-align: right;
+    }
+}

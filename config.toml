@@ -1,0 +1,21 @@
+baseURL = "https://laurahsb.github.io/pure-clean-energy/"
+title = "Pure Clean Energy | Meditieren in Niedersachsen"
+author = "Laura, Tobias, Birte, Hochschule Bremen"
+languageCode = "de"
+theme = "simple-snipcart-shop"
+contentDir = "products"
+copyright = ""
+[params]
+  instagram = "pce_meditation"
+  header = "Pure Clean Energy."
+  description = "Herzlich Willkommen zu unserem Meditations-Retreat Pure Clean Energy. Reise nach Bad Zwischenahn in Niedersachsen zum entspannen."
+  products_title = "Komm auf Deine eigene Reise!"
+  reviews_title = "Rezensionen"
+  not_found = "Tut uns leid, wir konnten keine Ergebnisse finden."
+  categories = []
+  collage = []
+  # snipcart features will not work without an api key
+  # see https://docs.snipcart.com/v3/dashboard/account-configuration#3-api-keys
+  snipcart_key = "YzVhOTMwMWMtZTk2Yy00YjA2LWJhZTctNGEwZGI3ZjU3NTI2NjM3ODM1NTEzNTgxNDUzMTcx"
+  favicon= "https://laurahsb.github.io/pure-clean-energy/images/favicon.png"
+

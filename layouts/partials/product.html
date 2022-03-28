@@ -1,0 +1,46 @@
+<div id="book" class="product">
+  <img class="product__image" src="{{ .image }}" alt="" />
+  <div class="card-content">
+    <div class="product__titlebar">
+      <h3 class="product__name">{{ .name }}</h3>
+      <div class="product__price"><strong>{{ .price }}€</strong></div>
+    </div>
+    <p class="product__description">
+    Unser abgelegenes Grundstück am See bietet Dir die räumliche Abgrenzung die Du für Deine innere Reise benötigst! <br/> 
+    Vorort wirst Du von uns mit einem ausgewogenen und naturnahem Essen versorgt. <br/>
+    <ul>
+       <li>All Inklusive</li>
+       <li>Donnerstagabends bis Sonntag</li>
+       <li>Erholung und Meditation</li>
+       <li>Yoga, Meditation, &Uuml;bungen zur Tiefenentspannung</li>
+       <li>Kurse zur Meditation, zum Entspannen und zur Selbstfindung</li>
+    </ul>
+
+
+    </p>
+    <div class="product__button-container">
+      <a
+        href="#" 
+        class="snipcart-add-item buy-button snipcart-checkout"
+        data-item-id="{{ .name | urlize }}"
+        data-item-name="{{ .name }}"
+        data-item-price="{{ (int .price) | lang.NumFmt 2 }}"
+        data-item-url="/"
+        data-item-image="{{ .image }}"
+        data-item-description="{{ .description }}"
+        {{ with .sizes }}
+        {{ $sizes := delimit . "|" }}
+        data-item-custom1-name="Choose a size"
+        data-item-custom1-options="{{ $sizes }}"
+        {{ end }}
+        {{ with .colors }}
+        {{ $colors := delimit . "|" }}
+        data-item-custom1-name="Choose a color"
+        data-item-custom1-options="{{ $colors }}"
+        {{ end }}
+      >
+        Deine Reise buchen
+      </a>
+    </div>
+  </div>
+</div>
